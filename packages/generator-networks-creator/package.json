@@ -1,0 +1,36 @@
+{
+    "name": "generator-networks-creator",
+    "version": "2.1.45",
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "private": true,
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "license": "Apache-2.0",
+    "dependencies": {
+        "generative-bayesian-network": "^2.1.45",
+        "node-fetch": "^2.6.7",
+        "tslib": "^2.4.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/apify/fingerprint-suite.git"
+    },
+    "homepage": "https://github.com/apify/fingerprint-suite",
+    "scripts": {
+        "build": "npm run compile && npm run copyfiles",
+        "clean": "rimraf ./dist",
+        "compile": "tsc -p tsconfig.build.json && gen-esm-wrapper ./dist/index.js ./dist/index.mjs",
+        "copyfiles": "cp -r ./src/network_structures ./dist",
+        "copy": "ts-node -T ../../scripts/copy.ts"
+    }
+}
