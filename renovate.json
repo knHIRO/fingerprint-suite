@@ -1,0 +1,27 @@
+{
+    "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
+    "pinVersions": false,
+    "separateMajorMinor": false,
+    "dependencyDashboard": false,
+    "semanticCommits": "enabled",
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": ["before 2am"],
+        "automerge": true,
+        "automergeType": "branch"
+    },
+    "constraints": {
+        "npm": "^7.0.0"
+    },
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["minor"],
+            "matchCurrentVersion": "!/^0/",
+            "groupName": "minor dependencies",
+            "groupSlug": "minor-deps",
+            "automerge": true,
+            "automergeType": "branch"
+        }
+    ],
+    "schedule": ["every weekday"]
+}
