@@ -1,0 +1,38 @@
+{
+    "name": "generative-bayesian-network",
+    "version": "2.1.45",
+    "author": {
+        "name": "Apify"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "bugs": {
+        "url": "https://github.com/apify/fingerprint-suite/issues"
+    },
+    "dependencies": {
+        "adm-zip": "^0.5.9",
+        "tslib": "^2.4.0"
+    },
+    "description": "An fast implementation of a generative bayesian network.",
+    "homepage": "https://github.com/apify/fingerprint-suite",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/apify/fingerprint-suite.git"
+    },
+    "scripts": {
+        "build": "npm run clean && npm run compile",
+        "postbuild": "cp ./README.md dist/",
+        "clean": "rimraf ./dist",
+        "compile": "tsc -p tsconfig.build.json && gen-esm-wrapper ./dist/index.js ./dist/index.mjs",
+        "copy": "ts-node -T ../../scripts/copy.ts"
+    }
+}
