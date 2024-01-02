@@ -107,5 +107,3 @@ see [CONTRIBUTING.md](https://github.com/apify/fingerprint-suite/blob/master/CON
 
 This project is licensed under the Apache License 2.0 -
 see the [LICENSE.md](https://github.com/apify/fingerprint-suite/blob/master/LICENSE.md) file for details.
-
-
